@@ -1,8 +1,42 @@
+# 🌤️ Estación Meteorológica IoT
+
+Sistema de monitorización meteorológica en tiempo real con arquitectura de datos moderna.
+
+![Dashboard Grafana](imagenes/dashboard_1.png)
+
+## 🚀 INICIO RÁPIDO (Ordenador Nuevo)
+
+```bash
+# 1. Clonar e instalar
+git clone https://github.com/andrews0212/proyecto_estacion.git
+cd proyecto_estacion
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+pip install -r requirements.txt
+
+# 2. Ejecutar todo automáticamente
+python inicio_rapido.py
+```
+
+**Dashboard Grafana**: http://localhost:3000/d/estacion-meteo/ (admin/admin)
+
+📖 **Guía completa**: [GUIA_INSTALACION.md](GUIA_INSTALACION.md)
+
+---
+
+## 📊 Dashboard en Tiempo Real
+
+![Dashboard Completo](imagenes/dashboard_2.png)
+
+---
+
 # Sistema ETL de Datos de Sensores
 
 Este proyecto implementa un pipeline ETL completo para datos de sensores utilizando arquitectura de capas Bronze, Silver y Gold con MinIO como data lake y PySpark para procesamiento.
 
 ## 🏗️ Arquitectura
+
+![Arquitectura del Sistema](imagenes/arquitectura.png)
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
