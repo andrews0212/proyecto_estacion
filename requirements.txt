@@ -1,0 +1,36 @@
+# Dependencias Python para Estación Meteorológica
+
+# Kafka
+kafka-python==2.0.2
+confluent-kafka==2.3.0
+
+# ClickHouse
+clickhouse-driver==0.2.6
+clickhouse-connect==0.7.0
+
+# MinIO / S3
+minio==7.2.0
+boto3==1.34.0
+
+# Procesamiento de datos
+pandas==2.1.4
+numpy==1.26.2
+pyarrow==14.0.1
+
+# Spark (para ETL)
+pyspark==3.5.0
+
+# Scheduling
+schedule==1.2.1
+
+# HTTP requests
+requests==2.31.0
+
+# Utilidades
+python-dotenv==1.0.0
+python-dateutil==2.8.2
+
+# Jupyter notebooks
+jupyter==1.0.0
+nbformat==5.9.2
+nbconvert==7.14.0
