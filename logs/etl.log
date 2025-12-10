@@ -1,0 +1,1064 @@
+2025-12-10 16:44:19 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:44:19 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:44:19 - utils.logger - ERROR - Error al inicializar scheduler: Expected string or URL object, got <property object at 0x000001530BE9F830>
+2025-12-10 16:53:02 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:53:02 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:53:02 - utils.minio_client - INFO - Bucket 'datalake' creado exitosamente
+2025-12-10 16:53:09 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 16:53:09 - utils.logger - INFO - === Iniciando ETL Scheduler ===
+2025-12-10 16:53:09 - utils.logger - INFO - ETL incremental programado cada 30 minutos
+2025-12-10 16:53:09 - utils.logger - INFO - Pipeline completo programado diariamente a las 02:00
+2025-12-10 16:53:09 - utils.logger - INFO - Limpieza semanal programada los domingos a las 03:00
+2025-12-10 16:53:09 - utils.logger - INFO - Health check programado cada hora
+2025-12-10 16:53:09 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:53:09 - utils.logger - INFO - Health check - Estado del pipeline: {'timestamp': '2025-12-10T16:53:09.678831', 'database_connection': True, 'layers': {'bronze': {'files': 0}, 'silver': {'files': 0, 'summary': {'message': 'No hay archivos en la capa Silver'}}, 'gold': {'files': 0}}}
+2025-12-10 16:53:09 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:53:09 - utils.logger - INFO - No se encontraron datos en Bronze, ejecutando carga inicial...
+2025-12-10 16:53:09 - utils.logger - INFO - === Iniciando carga inicial de datos ===
+2025-12-10 16:53:09 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 16:53:09 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:53:09 - utils.logger - INFO - ConexiÛn a MinIO exitosa
+2025-12-10 16:53:09 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 16:53:09 - utils.logger - INFO - Extrayendo todos los datos a capa Bronze...
+2025-12-10 16:53:09 - utils.database_client - ERROR - Error al obtener total de registros: (psycopg2.errors.UndefinedColumn) no existe la columna ´statusª
+LINE 1: ...LECT COUNT(*) as total FROM sensor_readings WHERE status = '...
+                                                             ^
+
+[SQL: SELECT COUNT(*) as total FROM sensor_readings WHERE status = 'active']
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-10 16:53:09 - layers.bronze_layer - ERROR - Error en extracciÛn completa: (psycopg2.errors.UndefinedColumn) no existe la columna ´statusª
+LINE 1: ...LECT COUNT(*) as total FROM sensor_readings WHERE status = '...
+                                                             ^
+
+[SQL: SELECT COUNT(*) as total FROM sensor_readings WHERE status = 'active']
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-10 16:53:09 - utils.logger - ERROR - Error en carga inicial a Bronze
+2025-12-10 16:53:09 - layers.silver_layer - INFO - SesiÛn de Spark cerrada
+2025-12-10 16:53:09 - utils.logger - INFO - Scheduler configurado y ejecut·ndose...
+2025-12-10 16:53:09 - utils.logger - INFO - Trabajos programados:
+2025-12-10 16:53:09 - utils.logger - INFO -   - Job(interval=30, unit=minutes, do=run_scheduled_etl, args=(), kwargs={})
+2025-12-10 16:53:09 - utils.logger - INFO -   - Job(interval=1, unit=days, do=run_daily_full_pipeline, args=(), kwargs={})
+2025-12-10 16:53:09 - utils.logger - INFO -   - Job(interval=1, unit=weeks, do=run_weekly_cleanup, args=(), kwargs={})
+2025-12-10 16:53:09 - utils.logger - INFO -   - Job(interval=1, unit=hours, do=health_check, args=(), kwargs={})
+2025-12-10 16:53:30 - utils.logger - ERROR - Error en scheduler: 'NoneType' object has no attribute 'sc'
+2025-12-10 16:53:30 - utils.logger - INFO - Deteniendo ETL Scheduler...
+2025-12-10 16:53:30 - layers.silver_layer - INFO - SesiÛn de Spark cerrada
+2025-12-10 16:53:30 - utils.logger - INFO - ETL Scheduler detenido
+2025-12-10 16:53:30 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:53:36 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:53:36 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:53:36 - utils.logger - INFO - Probando conexiones del sistema
+2025-12-10 16:53:36 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:53:42 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:53:42 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:53:42 - utils.logger - INFO - Iniciando carga inicial de datos
+2025-12-10 16:53:48 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 16:53:48 - utils.logger - INFO - === Iniciando carga inicial de datos ===
+2025-12-10 16:53:48 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 16:53:49 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:53:49 - utils.logger - INFO - ConexiÛn a MinIO exitosa
+2025-12-10 16:53:49 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 16:53:49 - utils.logger - INFO - Extrayendo todos los datos a capa Bronze...
+2025-12-10 16:53:49 - utils.database_client - ERROR - Error al obtener total de registros: (psycopg2.errors.UndefinedColumn) no existe la columna ´statusª
+LINE 1: ...LECT COUNT(*) as total FROM sensor_readings WHERE status = '...
+                                                             ^
+
+[SQL: SELECT COUNT(*) as total FROM sensor_readings WHERE status = 'active']
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-10 16:53:49 - layers.bronze_layer - ERROR - Error en extracciÛn completa: (psycopg2.errors.UndefinedColumn) no existe la columna ´statusª
+LINE 1: ...LECT COUNT(*) as total FROM sensor_readings WHERE status = '...
+                                                             ^
+
+[SQL: SELECT COUNT(*) as total FROM sensor_readings WHERE status = 'active']
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-10 16:53:49 - utils.logger - ERROR - Error en carga inicial a Bronze
+2025-12-10 16:53:49 - layers.silver_layer - INFO - SesiÛn de Spark cerrada
+2025-12-10 16:53:49 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:55:51 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:55:51 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:55:51 - utils.logger - INFO - Probando conexiones del sistema
+2025-12-10 16:55:51 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:55:51 - utils.minio_client - INFO - Bucket 'datalake' creado exitosamente
+2025-12-10 16:55:56 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:55:56 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:55:56 - utils.logger - INFO - Probando conexiones del sistema
+2025-12-10 16:55:56 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:56:06 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:56:06 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:56:06 - utils.logger - INFO - Iniciando carga inicial de datos
+2025-12-10 16:56:12 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 16:56:12 - utils.logger - INFO - === Iniciando carga inicial de datos ===
+2025-12-10 16:56:12 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 16:56:12 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:56:12 - utils.logger - INFO - ConexiÛn a MinIO exitosa
+2025-12-10 16:56:12 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 16:56:12 - utils.logger - INFO - Extrayendo todos los datos a capa Bronze...
+2025-12-10 16:56:12 - utils.database_client - INFO - Total de registros activos: 6100
+2025-12-10 16:56:12 - layers.bronze_layer - INFO - Total de registros a procesar: 6100
+2025-12-10 16:56:12 - utils.database_client - ERROR - Error al extraer datos: (psycopg2.errors.UndefinedColumn) no existe la columna ´sensor_idª
+LINE 4:             sensor_id,
+                    ^
+
+[SQL: 
+        SELECT 
+            id,
+            sensor_id,
+            temperature,
+            humidity,
+            pressure,
+            timestamp,
+            location
+        FROM sensor_readings
+        ORDER BY timestamp DESC
+        OFFSET 0
+        LIMIT 1000
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-10 16:56:12 - layers.bronze_layer - ERROR - Error en extracciÛn completa: (psycopg2.errors.UndefinedColumn) no existe la columna ´sensor_idª
+LINE 4:             sensor_id,
+                    ^
+
+[SQL: 
+        SELECT 
+            id,
+            sensor_id,
+            temperature,
+            humidity,
+            pressure,
+            timestamp,
+            location
+        FROM sensor_readings
+        ORDER BY timestamp DESC
+        OFFSET 0
+        LIMIT 1000
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-12-10 16:56:12 - utils.logger - ERROR - Error en carga inicial a Bronze
+2025-12-10 16:56:13 - layers.silver_layer - INFO - SesiÛn de Spark cerrada
+2025-12-10 16:56:13 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:57:33 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:57:33 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:57:33 - utils.logger - INFO - Iniciando carga inicial de datos
+2025-12-10 16:57:39 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 16:57:39 - utils.logger - INFO - === Iniciando carga inicial de datos ===
+2025-12-10 16:57:39 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 16:57:39 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:57:39 - utils.logger - INFO - ConexiÛn a MinIO exitosa
+2025-12-10 16:57:39 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 16:57:39 - utils.logger - INFO - Extrayendo todos los datos a capa Bronze...
+2025-12-10 16:57:39 - utils.database_client - INFO - Total de registros activos: 6100
+2025-12-10 16:57:39 - layers.bronze_layer - INFO - Total de registros a procesar: 6100
+2025-12-10 16:57:39 - utils.database_client - INFO - ExtraÌdos 1000 registros desde offset 0
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 1 procesado - Offset: 1000
+2025-12-10 16:57:40 - utils.database_client - INFO - ExtraÌdos 1000 registros desde offset 1000
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 2 procesado - Offset: 2000
+2025-12-10 16:57:40 - utils.database_client - INFO - ExtraÌdos 1000 registros desde offset 2000
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 3 procesado - Offset: 3000
+2025-12-10 16:57:40 - utils.database_client - INFO - ExtraÌdos 1000 registros desde offset 3000
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 4 procesado - Offset: 4000
+2025-12-10 16:57:40 - utils.database_client - INFO - ExtraÌdos 1000 registros desde offset 4000
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 5 procesado - Offset: 5000
+2025-12-10 16:57:40 - utils.database_client - INFO - ExtraÌdos 1000 registros desde offset 5000
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 6 procesado - Offset: 6000
+2025-12-10 16:57:40 - utils.database_client - INFO - ExtraÌdos 100 registros desde offset 6000
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - Lote 7 procesado - Offset: 7000
+2025-12-10 16:57:40 - layers.bronze_layer - INFO - ExtracciÛn inicial completada. 7 lotes procesados
+2025-12-10 16:57:40 - utils.logger - INFO - Procesando a capas Silver y Gold...
+2025-12-10 16:57:40 - layers.silver_layer - INFO - Procesando 7 archivos Bronze
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 16:57:40 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 16:57:42 - layers.silver_layer - INFO - Iniciando limpieza y transformaciÛn de datos
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=2660>
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:04 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: reentrant call inside <_io.BufferedReader name=2660>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 389, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 2487, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+    ^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\errors\exceptions\captured.py", line 282, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:04 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 389, in signal_handler
+    self.cancelAllJobs()
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 2487, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+    ^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\errors\exceptions\captured.py", line 282, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o25.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:04 - layers.silver_layer - ERROR - Error en limpieza y transformaciÛn: An error occurred while calling o132.collectToPython
+2025-12-10 16:58:04 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: An error occurred while calling o132.collectToPython
+2025-12-10 16:58:04 - utils.logger - ERROR - Error en procesamiento a Silver
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:04 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-12-10 16:58:04 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:05 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+2025-12-10 16:58:05 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:05 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 16:58:07 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:07 - utils.logger - ERROR - Error inesperado: [WinError 10061] No se puede establecer una conexiÛn ya que el equipo de destino denegÛ expresamente dicha conexiÛn
+2025-12-10 16:58:07 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:07 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 16:58:15 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:58:15 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:58:24 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:58:24 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 16:58:30 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 16:58:30 - utils.logger - INFO - === Iniciando ETL Scheduler ===
+2025-12-10 16:58:30 - utils.logger - INFO - ETL incremental programado cada 30 minutos
+2025-12-10 16:58:30 - utils.logger - INFO - Pipeline completo programado diariamente a las 02:00
+2025-12-10 16:58:30 - utils.logger - INFO - Limpieza semanal programada los domingos a las 03:00
+2025-12-10 16:58:30 - utils.logger - INFO - Health check programado cada hora
+2025-12-10 16:58:31 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:58:31 - utils.logger - INFO - Health check - Estado del pipeline: {'timestamp': '2025-12-10T16:58:30.967716', 'database_connection': True, 'layers': {'bronze': {'files': 7}, 'silver': {'files': 0, 'summary': {'message': 'No hay archivos en la capa Silver'}}, 'gold': {'files': 0}}}
+2025-12-10 16:58:31 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 16:58:31 - utils.logger - INFO - Scheduler configurado y ejecut·ndose...
+2025-12-10 16:58:31 - utils.logger - INFO - Trabajos programados:
+2025-12-10 16:58:31 - utils.logger - INFO -   - Job(interval=30, unit=minutes, do=run_scheduled_etl, args=(), kwargs={})
+2025-12-10 16:58:31 - utils.logger - INFO -   - Job(interval=1, unit=days, do=run_daily_full_pipeline, args=(), kwargs={})
+2025-12-10 16:58:31 - utils.logger - INFO -   - Job(interval=1, unit=weeks, do=run_weekly_cleanup, args=(), kwargs={})
+2025-12-10 16:58:31 - utils.logger - INFO -   - Job(interval=1, unit=hours, do=health_check, args=(), kwargs={})
+2025-12-10 17:01:05 - utils.logger - INFO - Recibida seÒal de interrupciÛn, deteniendo scheduler...
+2025-12-10 17:01:05 - utils.logger - INFO - Deteniendo ETL Scheduler...
+2025-12-10 17:01:06 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\Desktop\proyecto_estacion\scheduler.py", line 117, in start
+    time.sleep(30)  # Revisar cada 30 segundos
+    ^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 390, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+2025-12-10 17:01:06 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:06 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\Desktop\proyecto_estacion\scheduler.py", line 117, in start
+    time.sleep(30)  # Revisar cada 30 segundos
+    ^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 390, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-12-10 17:01:06 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:08 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:08 - utils.logger - WARNING - Error al cerrar recursos: [WinError 10061] No se puede establecer una conexiÛn ya que el equipo de destino denegÛ expresamente dicha conexiÛn
+2025-12-10 17:01:08 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:08 - utils.logger - INFO - ETL Scheduler detenido
+2025-12-10 17:01:08 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:31 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:01:31 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:01:37 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 17:01:37 - utils.logger - INFO - === Iniciando ETL Scheduler ===
+2025-12-10 17:01:37 - utils.logger - INFO - ETL incremental programado cada 30 minutos
+2025-12-10 17:01:37 - utils.logger - INFO - Pipeline completo programado diariamente a las 02:00
+2025-12-10 17:01:37 - utils.logger - INFO - Limpieza semanal programada los domingos a las 03:00
+2025-12-10 17:01:37 - utils.logger - INFO - Health check programado cada hora
+2025-12-10 17:01:37 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 17:01:37 - utils.logger - INFO - Health check - Estado del pipeline: {'timestamp': '2025-12-10T17:01:37.645477', 'database_connection': True, 'layers': {'bronze': {'files': 7}, 'silver': {'files': 0, 'summary': {'message': 'No hay archivos en la capa Silver'}}, 'gold': {'files': 0}}}
+2025-12-10 17:01:37 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 17:01:37 - utils.logger - INFO - Scheduler configurado y ejecut·ndose...
+2025-12-10 17:01:37 - utils.logger - INFO - Trabajos programados:
+2025-12-10 17:01:37 - utils.logger - INFO -   - Job(interval=30, unit=minutes, do=run_scheduled_etl, args=(), kwargs={})
+2025-12-10 17:01:37 - utils.logger - INFO -   - Job(interval=1, unit=days, do=run_daily_full_pipeline, args=(), kwargs={})
+2025-12-10 17:01:37 - utils.logger - INFO -   - Job(interval=1, unit=weeks, do=run_weekly_cleanup, args=(), kwargs={})
+2025-12-10 17:01:37 - utils.logger - INFO -   - Job(interval=1, unit=hours, do=health_check, args=(), kwargs={})
+2025-12-10 17:01:40 - utils.logger - INFO - Recibida seÒal de interrupciÛn, deteniendo scheduler...
+2025-12-10 17:01:40 - utils.logger - INFO - Deteniendo ETL Scheduler...
+2025-12-10 17:01:41 - py4j.clientserver - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\Desktop\proyecto_estacion\scheduler.py", line 117, in start
+    time.sleep(30)  # Revisar cada 30 segundos
+    ^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 390, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+2025-12-10 17:01:41 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:41 - root - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\Desktop\proyecto_estacion\scheduler.py", line 117, in start
+    time.sleep(30)  # Revisar cada 30 segundos
+    ^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pyspark\core\context.py", line 390, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupciÛn de una conexiÛn existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-12-10 17:01:41 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:43 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:43 - utils.logger - WARNING - Error al cerrar recursos: [WinError 10061] No se puede establecer una conexiÛn ya que el equipo de destino denegÛ expresamente dicha conexiÛn
+2025-12-10 17:01:43 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:01:43 - utils.logger - INFO - ETL Scheduler detenido
+2025-12-10 17:01:43 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:04:56 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:04:56 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:05:01 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:05:01 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:05:01 - utils.logger - INFO - Iniciando pipeline completo
+2025-12-10 17:05:08 - layers.silver_layer - INFO - SesiÛn de Spark creada exitosamente
+2025-12-10 17:05:08 - utils.logger - INFO - === Iniciando pipeline ETL completo ===
+2025-12-10 17:05:08 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 17:05:08 - utils.database_client - INFO - ConexiÛn a la base de datos exitosa
+2025-12-10 17:05:08 - utils.logger - INFO - ConexiÛn a MinIO exitosa
+2025-12-10 17:05:08 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 17:05:08 - utils.logger - INFO - --- Iniciando capa Bronze ---
+2025-12-10 17:05:08 - utils.database_client - INFO - ExtraÌdos 6100 nuevos registros desde ID 0
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/170508.parquet
+2025-12-10 17:05:08 - layers.bronze_layer - INFO - Lote procesado exitosamente. ⁄ltimo ID: 6100
+2025-12-10 17:05:08 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 17:05:08 - utils.logger - INFO - --- Ejecutando Notebooks ETL ---
+2025-12-10 17:05:08 - utils.notebook_executor - INFO - === Iniciando ejecuciÛn de notebooks ETL ===
+2025-12-10 17:05:08 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 17:05:08 - utils.notebook_executor - ERROR - Notebook no encontrado: C:\Users\andre\Desktop\proyecto_estacion\etl\notebooks\silver_data_cleaning.ipynb
+2025-12-10 17:05:08 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 17:05:08 - utils.logger - WARNING - Error en ejecuciÛn de notebooks, intentando procesamiento directo
+2025-12-10 17:05:08 - utils.logger - INFO - --- Fallback: Procesamiento directo Silver ---
+2025-12-10 17:05:08 - layers.silver_layer - INFO - Procesando 8 archivos Bronze
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170508.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 17:05:08 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 17:05:10 - layers.silver_layer - INFO - Iniciando limpieza y transformaciÛn de datos
+2025-12-10 17:05:39 - layers.silver_layer - INFO - Limpieza y transformaciÛn completada
+2025-12-10 17:05:51 - utils.minio_client - INFO - Archivo subido exitosamente: silver/sensor_data/cleaned_data_20251210_170551.parquet
+2025-12-10 17:05:51 - layers.silver_layer - INFO - Datos Silver guardados exitosamente: silver/sensor_data/cleaned_data_20251210_170551.parquet
+2025-12-10 17:05:51 - layers.silver_layer - INFO - Registros procesados: 2
+2025-12-10 17:05:51 - utils.logger - INFO - --- Fallback: Procesamiento directo Gold ---
+2025-12-10 17:05:51 - utils.minio_client - INFO - Archivo descargado exitosamente: silver/sensor_data/cleaned_data_20251210_170551.parquet
+2025-12-10 17:05:51 - layers.gold_layer - ERROR - Error en procesamiento Silver a Gold: unhashable type: 'numpy.ndarray'
+2025-12-10 17:05:51 - utils.logger - ERROR - Error en capa Gold
+2025-12-10 17:05:51 - layers.silver_layer - INFO - SesiÛn de Spark cerrada
+2025-12-10 17:05:51 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:06:47 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:06:47 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:06:47 - utils.logger - INFO - Iniciando pipeline completo
+2025-12-10 17:06:53 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 17:06:53 - utils.logger - INFO - === Iniciando pipeline ETL completo ===
+2025-12-10 17:06:53 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 17:06:53 - utils.database_client - INFO - Conexi√≥n a la base de datos exitosa
+2025-12-10 17:06:53 - utils.logger - INFO - Conexi√≥n a MinIO exitosa
+2025-12-10 17:06:53 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 17:06:53 - utils.logger - INFO - --- Iniciando capa Bronze ---
+2025-12-10 17:06:53 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/170653.parquet
+2025-12-10 17:06:53 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 17:06:53 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 17:06:53 - utils.logger - INFO - --- Ejecutando Notebooks ETL ---
+2025-12-10 17:06:53 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 17:06:53 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 17:06:53 - utils.notebook_executor - INFO - Ejecutando notebook: silver_data_cleaning.ipynb
+2025-12-10 17:06:53 - utils.notebook_executor - ERROR - Error al ejecutar notebook silver_data_cleaning.ipynb: [WinError 2] El sistema no puede encontrar el archivo especificado
+2025-12-10 17:06:53 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 17:06:53 - utils.logger - WARNING - Error en ejecuci√≥n de notebooks, intentando procesamiento directo
+2025-12-10 17:06:53 - utils.logger - INFO - --- Fallback: Procesamiento directo Silver ---
+2025-12-10 17:06:53 - layers.silver_layer - INFO - Procesando 9 archivos Bronze
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170508.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170653.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 17:06:53 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 17:06:55 - layers.silver_layer - INFO - Iniciando limpieza y transformaci√≥n de datos
+2025-12-10 17:07:25 - layers.silver_layer - INFO - Limpieza y transformaci√≥n completada
+2025-12-10 17:07:34 - utils.minio_client - INFO - Archivo subido exitosamente: silver/sensor_data/cleaned_data_20251210_170734.parquet
+2025-12-10 17:07:34 - layers.silver_layer - INFO - Datos Silver guardados exitosamente: silver/sensor_data/cleaned_data_20251210_170734.parquet
+2025-12-10 17:07:34 - layers.silver_layer - INFO - Registros procesados: 2
+2025-12-10 17:07:34 - utils.logger - INFO - --- Fallback: Procesamiento directo Gold ---
+2025-12-10 17:07:34 - utils.minio_client - INFO - Archivo descargado exitosamente: silver/sensor_data/cleaned_data_20251210_170551.parquet
+2025-12-10 17:07:34 - utils.minio_client - INFO - Archivo descargado exitosamente: silver/sensor_data/cleaned_data_20251210_170734.parquet
+2025-12-10 17:07:34 - layers.gold_layer - ERROR - Error en procesamiento Silver a Gold: unhashable type: 'numpy.ndarray'
+2025-12-10 17:07:34 - utils.logger - ERROR - Error en capa Gold
+2025-12-10 17:07:35 - layers.silver_layer - INFO - Sesi√≥n de Spark cerrada
+2025-12-10 17:07:35 - utils.logger - ERROR - ‚ùå Error en pipeline completo
+2025-12-10 17:07:35 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:08:51 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:08:51 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:08:51 - utils.logger - INFO - Iniciando pipeline completo
+2025-12-10 17:08:58 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 17:08:58 - utils.logger - INFO - === Iniciando pipeline ETL completo ===
+2025-12-10 17:08:58 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 17:08:58 - utils.database_client - INFO - Conexi√≥n a la base de datos exitosa
+2025-12-10 17:08:58 - utils.logger - INFO - Conexi√≥n a MinIO exitosa
+2025-12-10 17:08:58 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 17:08:58 - utils.logger - INFO - --- Iniciando capa Bronze ---
+2025-12-10 17:08:58 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 17:08:58 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/170858.parquet
+2025-12-10 17:08:58 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 17:08:58 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 17:08:58 - utils.logger - INFO - --- Ejecutando Notebooks ETL ---
+2025-12-10 17:08:58 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 17:08:58 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 17:08:58 - utils.notebook_executor - INFO - Ejecutando notebook: silver_data_cleaning.ipynb
+2025-12-10 17:11:18 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+2025-12-10 17:11:18 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:18 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 17:11:20 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:20 - utils.notebook_executor - ERROR - Error al ejecutar notebook silver_data_cleaning.ipynb: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 17:11:20 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:20 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:20 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 17:11:20 - utils.logger - WARNING - Error en ejecuci√≥n de notebooks, intentando procesamiento directo
+2025-12-10 17:11:20 - utils.logger - INFO - --- Fallback: Procesamiento directo Silver ---
+2025-12-10 17:11:20 - layers.silver_layer - INFO - Procesando 10 archivos Bronze
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170508.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170653.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170858.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 17:11:20 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 17:11:23 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:23 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 17:11:23 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:23 - utils.logger - ERROR - Error en capa Silver
+2025-12-10 17:11:25 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:25 - utils.logger - ERROR - Error inesperado: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 17:11:25 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:11:25 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:13:04 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:13:04 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:13:04 - utils.logger - INFO - Iniciando pipeline completo
+2025-12-10 17:13:10 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 17:13:10 - utils.logger - INFO - === Iniciando pipeline ETL completo ===
+2025-12-10 17:13:10 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 17:13:10 - utils.database_client - INFO - Conexi√≥n a la base de datos exitosa
+2025-12-10 17:13:10 - utils.logger - INFO - Conexi√≥n a MinIO exitosa
+2025-12-10 17:13:10 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 17:13:10 - utils.logger - INFO - --- Iniciando capa Bronze ---
+2025-12-10 17:13:10 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 17:13:11 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/171310.parquet
+2025-12-10 17:13:11 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 17:13:11 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 17:13:11 - utils.logger - INFO - --- Ejecutando Notebooks ETL ---
+2025-12-10 17:13:11 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 17:13:11 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 17:13:18 - utils.notebook_executor - ERROR - ‚ùå Error en notebook Silver: WARNING: Using incubator modules: jdk.incubator.vector
+25/12/10 17:13:15 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/12/10 17:13:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/12/10 17:13:16 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+25/12/10 17:13:16 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+Traceback (most recent call last):
+  File "C:\Users\andre\Desktop\proyecto_estacion\scripts\run_silver_notebook.py", line 43, in main
+    print("\u2705 Spark configurado exitosamente")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\Desktop\proyecto_estacion\scripts\run_silver_notebook.py", line 171, in <module>
+    success = main()
+              ^^^^^^
+  File "C:\Users\andre\Desktop\proyecto_estacion\scripts\run_silver_notebook.py", line 165, in main
+    print(f"\u274c Error durante el procesamiento: {e}")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>
+
+2025-12-10 17:13:18 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 17:13:18 - utils.logger - WARNING - Error en ejecuci√≥n de notebooks, intentando procesamiento directo
+2025-12-10 17:13:18 - utils.logger - INFO - --- Fallback: Procesamiento directo Silver ---
+2025-12-10 17:13:18 - layers.silver_layer - INFO - Procesando 11 archivos Bronze
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170508.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170653.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170858.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/171310.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 17:13:19 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 17:13:22 - layers.silver_layer - INFO - Iniciando limpieza y transformaci√≥n de datos
+2025-12-10 17:13:51 - layers.silver_layer - INFO - Limpieza y transformaci√≥n completada
+2025-12-10 17:14:00 - utils.minio_client - INFO - Archivo subido exitosamente: silver/sensor_data/cleaned_data_20251210_171400.parquet
+2025-12-10 17:14:00 - layers.silver_layer - INFO - Datos Silver guardados exitosamente: silver/sensor_data/cleaned_data_20251210_171400.parquet
+2025-12-10 17:14:00 - layers.silver_layer - INFO - Registros procesados: 2
+2025-12-10 17:14:00 - utils.logger - INFO - --- Fallback: Procesamiento directo Gold ---
+2025-12-10 17:14:00 - utils.minio_client - INFO - Archivo descargado exitosamente: silver/sensor_data/cleaned_data_20251210_170551.parquet
+2025-12-10 17:14:00 - utils.minio_client - INFO - Archivo descargado exitosamente: silver/sensor_data/cleaned_data_20251210_170734.parquet
+2025-12-10 17:14:00 - utils.minio_client - INFO - Archivo descargado exitosamente: silver/sensor_data/cleaned_data_20251210_171400.parquet
+2025-12-10 17:14:00 - layers.gold_layer - ERROR - Error en procesamiento Silver a Gold: unhashable type: 'numpy.ndarray'
+2025-12-10 17:14:00 - utils.logger - ERROR - Error en capa Gold
+2025-12-10 17:14:01 - layers.silver_layer - INFO - Sesi√≥n de Spark cerrada
+2025-12-10 17:14:01 - utils.logger - ERROR - ‚ùå Error en pipeline completo
+2025-12-10 17:14:01 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:18:50 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:18:50 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:18:50 - utils.logger - INFO - Iniciando pipeline completo
+2025-12-10 17:18:56 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 17:18:56 - utils.logger - INFO - === Iniciando pipeline ETL completo ===
+2025-12-10 17:18:56 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 17:18:56 - utils.database_client - INFO - Conexi√≥n a la base de datos exitosa
+2025-12-10 17:18:56 - utils.logger - INFO - Conexi√≥n a MinIO exitosa
+2025-12-10 17:18:56 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 17:18:56 - utils.logger - INFO - --- Iniciando capa Bronze ---
+2025-12-10 17:18:56 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 17:18:56 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/171856.parquet
+2025-12-10 17:18:56 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 17:18:56 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 17:18:56 - utils.logger - INFO - --- Ejecutando Notebooks ETL ---
+2025-12-10 17:18:56 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 17:18:56 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 17:20:28 - utils.notebook_executor - INFO - ‚úÖ Notebook Silver ejecutado exitosamente
+2025-12-10 17:20:28 - utils.notebook_executor - INFO - === EJECUTANDO NOTEBOOK SILVER DE FORMA INDEPENDIENTE ===
+Spark configurado exitosamente
+Archivos Bronze encontrados: 12
+Cargado: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+Cargado: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+Cargado: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+Cargado: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+Cargado: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+Datos consolidados: 4100 registros
+Iniciando limpieza de datos...
+Duplicados eliminados: 4099
+Valores nulos imputados en temperature con media: 17.40
+Valores nulos imputados en humidity con media: 56.00
+Valores nulos imputados en pressure con media: 1030.00
+Valores nulos imputados en pm25 con media: 87.00
+Valores nulos imputados en light con media: 7662.00
+Enriquecimiento temporal skipeado (timestamp tiene formato complejo)
+Limpieza completada: 1 registros finales
+Datos guardados en Silver: silver/sensor_data/cleaned_data_script_20251210_172027.parquet
+Log de ejecuci√≥n guardado
+CORRECTO: el proceso con PID 1192 (proceso secundario de PID 7600)
+ha sido terminado.
+CORRECTO: el proceso con PID 7600 (proceso secundario de PID 19708)
+ha sido terminado.
+CORRECTO: el proceso con PID 19708 (proceso secundario de PID 20048)
+ha sido terminado.
+2025-12-10 17:20:28 - utils.notebook_executor - INFO - --- Ejecutando notebook Gold ---
+2025-12-10 17:20:29 - utils.notebook_executor - INFO - ‚úÖ Notebook Gold ejecutado exitosamente
+2025-12-10 17:20:29 - utils.notebook_executor - INFO - === EJECUTANDO NOTEBOOK GOLD DE FORMA INDEPENDIENTE ===
+Archivos Silver encontrados: 5
+Cargado: silver/sensor_data/cleaned_data_20251210_170551.parquet
+Cargado: silver/sensor_data/cleaned_data_20251210_170734.parquet
+Cargado: silver/sensor_data/cleaned_data_20251210_171400.parquet
+Cargado: silver/sensor_data/cleaned_data_script_20251210_171820.parquet
+Cargado: silver/sensor_data/cleaned_data_script_20251210_172027.parquet
+Datos consolidados: 8 registros
+Generando KPIs...
+KPIs generados:
+   total_readings: 8
+   unique_sensors: 2
+   temperature_avg: 20.6625
+   temperature_max: 25.0
+   temperature_min: 17.4
+   temperature_std: 3.6205514576018474
+   humidity_avg: 49.25
+   humidity_max: 56.0
+   humidity_min: 39.0
+   pm25_avg: 33.0
+   pm25_max: 87.0
+   air_quality_category: Moderada
+   pressure_avg: 992.125
+   pressure_max: 1030.0
+   pressure_min: 939.0
+Alertas: 0 total
+KPIs guardados: gold/sensor_kpis/kpis_script_20251210_172029.parquet
+Estad√≠sticas por sensor guardadas: gold/sensor_kpis/sensor_statistics_script_20251210_172029.parquet
+Log de ejecuci√≥n guardado
+
+Procesamiento completado!
+Total archivos en Gold: 5
+Temperatura promedio: 20.66¬∞C
+Calidad del aire: Moderada
+Sensores √∫nicos: 2
+2025-12-10 17:20:29 - utils.notebook_executor - INFO - === Notebooks ETL ejecutados exitosamente ===
+2025-12-10 17:20:29 - utils.logger - INFO - --- Exportando KPIs ---
+2025-12-10 17:20:29 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/sensor_statistics_script_20251210_172029.parquet
+2025-12-10 17:20:29 - layers.gold_layer - INFO - KPIs m√°s recientes obtenidos de: gold/sensor_kpis/sensor_statistics_script_20251210_172029.parquet
+2025-12-10 17:20:29 - utils.minio_client - INFO - Archivo subido exitosamente: gold/sensor_kpis/exports/gold_kpis_export_20251210_172029.parquet
+2025-12-10 17:20:29 - layers.gold_layer - INFO - KPIs exportados exitosamente: gold/sensor_kpis/exports/gold_kpis_export_20251210_172029.parquet
+2025-12-10 17:20:29 - utils.logger - INFO - KPIs exportados en: gold/sensor_kpis/exports/gold_kpis_export_20251210_172029.parquet
+2025-12-10 17:20:29 - utils.logger - INFO - === Pipeline ETL completado exitosamente en 93.34 segundos ===
+2025-12-10 17:20:30 - layers.silver_layer - INFO - Sesi√≥n de Spark cerrada
+2025-12-10 17:20:30 - utils.logger - INFO - ‚úÖ Pipeline completo exitoso
+2025-12-10 17:20:30 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:24:33 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:24:33 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:24:33 - utils.logger - INFO - Iniciando pipeline completo
+2025-12-10 17:24:40 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 17:24:40 - utils.logger - INFO - === Iniciando pipeline ETL completo ===
+2025-12-10 17:24:40 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 17:24:40 - utils.database_client - INFO - Conexi√≥n a la base de datos exitosa
+2025-12-10 17:24:40 - utils.logger - INFO - Conexi√≥n a MinIO exitosa
+2025-12-10 17:24:40 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 17:24:40 - utils.logger - INFO - --- Iniciando capa Bronze ---
+2025-12-10 17:24:40 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 17:24:40 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/172440.parquet
+2025-12-10 17:24:40 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 17:24:40 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 17:24:40 - utils.logger - INFO - --- Ejecutando Notebooks ETL ---
+2025-12-10 17:24:40 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 17:24:40 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 17:25:44 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+2025-12-10 17:25:44 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:44 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 17:25:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:46 - utils.notebook_executor - ERROR - Error ejecutando script Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 17:25:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:46 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 17:25:46 - utils.logger - WARNING - Error en ejecuci√≥n de notebooks, intentando procesamiento directo
+2025-12-10 17:25:46 - utils.logger - INFO - --- Fallback: Procesamiento directo Silver ---
+2025-12-10 17:25:46 - layers.silver_layer - INFO - Procesando 13 archivos Bronze
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170508.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170653.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/170858.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/171310.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/171856.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/172440.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 17:25:46 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 17:25:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:48 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 17:25:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:48 - utils.logger - ERROR - Error en capa Silver
+2025-12-10 17:25:50 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:50 - utils.logger - ERROR - Error inesperado: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 17:25:50 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:25:50 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 17:30:54 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:30:54 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:30:54 - utils.logger - INFO - Exportando datos de Gold a archivos locales
+2025-12-10 17:30:54 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/kpis.parquet
+2025-12-10 17:30:54 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/sensor_statistics.parquet
+2025-12-10 17:30:54 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/execution_log.parquet
+2025-12-10 17:31:22 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:31:22 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:31:22 - utils.logger - INFO - Exportando datos de Gold a archivos locales
+2025-12-10 17:31:22 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/kpis.parquet
+2025-12-10 17:31:22 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/sensor_statistics.parquet
+2025-12-10 17:31:22 - utils.minio_client - INFO - Archivo descargado exitosamente: gold/sensor_kpis/execution_log.parquet
+2025-12-10 17:34:28 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:34:28 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:34:36 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 17:34:36 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:47:07 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:47:07 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:47:07 - utils.logger - INFO - Iniciando carga inicial de datos
+2025-12-10 18:47:14 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 18:47:14 - utils.logger - INFO - === Iniciando carga inicial de datos ===
+2025-12-10 18:47:14 - utils.logger - INFO - Verificando conexiones...
+2025-12-10 18:47:14 - utils.database_client - INFO - Conexi√≥n a la base de datos exitosa
+2025-12-10 18:47:14 - utils.logger - INFO - Conexi√≥n a MinIO exitosa
+2025-12-10 18:47:14 - utils.logger - INFO - Todas las conexiones verificadas exitosamente
+2025-12-10 18:47:14 - utils.logger - INFO - Extrayendo todos los datos a capa Bronze...
+2025-12-10 18:47:14 - utils.database_client - INFO - Total de registros activos: 6100
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Total de registros a procesar: 6100
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 1000 registros desde offset 0
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 1 procesado - Offset: 1000
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 1000 registros desde offset 1000
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 2 procesado - Offset: 2000
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 1000 registros desde offset 2000
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 3 procesado - Offset: 3000
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 1000 registros desde offset 3000
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 4 procesado - Offset: 4000
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 1000 registros desde offset 4000
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 5 procesado - Offset: 5000
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 1000 registros desde offset 5000
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 6 procesado - Offset: 6000
+2025-12-10 18:47:14 - utils.database_client - INFO - Extra√≠dos 100 registros desde offset 6000
+2025-12-10 18:47:14 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Lote 7 procesado - Offset: 7000
+2025-12-10 18:47:14 - layers.bronze_layer - INFO - Extracci√≥n inicial completada. 7 lotes procesados
+2025-12-10 18:47:14 - utils.logger - INFO - Ejecutando notebooks para procesamiento Silver y Gold...
+2025-12-10 18:47:14 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 18:47:14 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 18:48:53 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+2025-12-10 18:48:53 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:53 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 18:48:55 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:55 - utils.notebook_executor - ERROR - Error ejecutando script Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:48:55 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:55 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:55 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 18:48:55 - utils.logger - WARNING - Error en notebooks, usando procesamiento directo
+2025-12-10 18:48:55 - layers.silver_layer - INFO - Procesando 7 archivos Bronze
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 18:48:55 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 18:48:57 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:57 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:48:57 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:57 - utils.logger - ERROR - Error en procesamiento a Silver
+2025-12-10 18:48:59 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:59 - utils.logger - ERROR - Error inesperado: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:48:59 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:48:59 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:01 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:58:01 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:58:01 - utils.logger - INFO - Iniciando actualizaci√≥n incremental
+2025-12-10 18:58:07 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 18:58:07 - utils.logger - INFO - === Iniciando actualizaci√≥n incremental ===
+2025-12-10 18:58:08 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 18:58:08 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/185808.parquet
+2025-12-10 18:58:08 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 18:58:08 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 18:58:08 - utils.logger - INFO - Ejecutando notebooks para actualizaci√≥n incremental...
+2025-12-10 18:58:08 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 18:58:08 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 18:58:40 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+2025-12-10 18:58:40 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:40 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 18:58:42 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:42 - utils.notebook_executor - ERROR - Error ejecutando script Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:58:42 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:42 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:42 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 18:58:42 - utils.logger - WARNING - Error en notebooks, usando procesamiento directo incremental
+2025-12-10 18:58:42 - layers.silver_layer - INFO - Procesando 8 archivos Bronze
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/185808.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 18:58:42 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 18:58:44 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:44 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:58:44 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:44 - utils.logger - ERROR - Error en procesamiento incremental Silver
+2025-12-10 18:58:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:46 - utils.logger - ERROR - Error inesperado: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:58:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:58:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:05 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:59:05 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:59:05 - utils.logger - INFO - Iniciando actualizaci√≥n incremental
+2025-12-10 18:59:12 - layers.silver_layer - INFO - Sesi√≥n de Spark creada exitosamente
+2025-12-10 18:59:12 - utils.logger - INFO - === Iniciando actualizaci√≥n incremental ===
+2025-12-10 18:59:12 - utils.database_client - INFO - Extra√≠dos 6100 nuevos registros desde ID 0
+2025-12-10 18:59:12 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/185912.parquet
+2025-12-10 18:59:12 - layers.bronze_layer - INFO - Lote procesado exitosamente. √öltimo ID: 6100
+2025-12-10 18:59:12 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 18:59:12 - utils.logger - INFO - Ejecutando notebooks para actualizaci√≥n incremental...
+2025-12-10 18:59:12 - utils.notebook_executor - INFO - === Iniciando ejecuci√≥n de notebooks ETL ===
+2025-12-10 18:59:12 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+2025-12-10 18:59:46 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+2025-12-10 18:59:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:46 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupci√≥n de una conexi√≥n existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 18:59:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:48 - utils.notebook_executor - ERROR - Error ejecutando script Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:59:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:48 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 18:59:48 - utils.logger - WARNING - Error en notebooks, usando procesamiento directo incremental
+2025-12-10 18:59:48 - layers.silver_layer - INFO - Procesando 9 archivos Bronze
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/185808.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/185912.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: [WinError 10061] No se puede establecer una conexi√≥n ya que el equipo de destino deneg√≥ expresamente dicha conexi√≥n
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - utils.logger - ERROR - Error en procesamiento incremental Silver

@@ -1,0 +1,63 @@
+2025-12-10 18:59:05 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:59:05 - utils.logger - INFO - Sistema de logging configurado correctamente
+2025-12-10 18:59:05 - utils.logger - INFO - Iniciando actualización incremental
+WARNING: Using incubator modules: jdk.incubator.vector
+25/12/10 18:59:09 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+25/12/10 18:59:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-12-10 18:59:12 - layers.silver_layer - INFO - Sesión de Spark creada exitosamente
+2025-12-10 18:59:12 - utils.logger - INFO - === Iniciando actualización incremental ===
+2025-12-10 18:59:12 - utils.database_client - INFO - Extraídos 6100 nuevos registros desde ID 0
+2025-12-10 18:59:12 - utils.minio_client - INFO - Archivo subido exitosamente: bronze/sensor_data/2025/12/10/185912.parquet
+2025-12-10 18:59:12 - layers.bronze_layer - INFO - Lote procesado exitosamente. Último ID: 6100
+2025-12-10 18:59:12 - layers.bronze_layer - INFO - Registros procesados: 6100
+2025-12-10 18:59:12 - utils.logger - INFO - Ejecutando notebooks para actualización incremental...
+2025-12-10 18:59:12 - utils.notebook_executor - INFO - === Iniciando ejecución de notebooks ETL ===
+2025-12-10 18:59:12 - utils.notebook_executor - INFO - --- Ejecutando notebook Silver ---
+¨Desea terminar el trabajo por lotes (S/N)? ^C2025-12-10 18:59:46 - py4j.clientserver - INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-12-10 18:59:46 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:46 - root - INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 527, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\andre\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\py4j\clientserver.py", line 530, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+2025-12-10 18:59:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:48 - utils.notebook_executor - ERROR - Error ejecutando script Silver: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-12-10 18:59:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:48 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:48 - utils.notebook_executor - ERROR - Error en notebook Silver, abortando secuencia
+2025-12-10 18:59:48 - utils.logger - WARNING - Error en notebooks, usando procesamiento directo incremental
+2025-12-10 18:59:48 - layers.silver_layer - INFO - Procesando 9 archivos Bronze
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/185808.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/2025/12/10/185912.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0000.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0001.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0002.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0003.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0004.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0005.parquet
+2025-12-10 18:59:48 - utils.minio_client - INFO - Archivo descargado exitosamente: bronze/sensor_data/initial_load/2025/12/10/batch_0006.parquet
+^C^C^C^C^C2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - layers.silver_layer - ERROR - Error en procesamiento Bronze a Silver: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-12-10 18:59:56 - utils.logger - ERROR - Error en procesamiento incremental Silver
+^C^C
